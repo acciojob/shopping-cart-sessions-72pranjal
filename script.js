@@ -30,13 +30,7 @@
                 li.innerHTML = `${product.name} - $${product.price}`;
                 cartList.appendChild(li);
             })
-        } else {
-            addedProduct.forEach(product=> {
-                const li = document.createElement("li");
-                li.innerHTML = `${product.name} - $${product.price}`;
-                cartList.appendChild(li);
-            })
-        }  
+        } 
       }
 
       // Add item to cart
