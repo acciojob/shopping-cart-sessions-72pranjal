@@ -22,7 +22,6 @@
 
       // Render cart list
       function renderCart() {
-        console.log('renderCart')
         let addedProducts = JSON.parse(sessionStorage.getItem('cart'))
         if(addedProducts && addedProducts !== null) {
             addedProducts.forEach(product=> {
