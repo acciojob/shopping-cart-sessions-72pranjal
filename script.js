@@ -23,7 +23,7 @@
       // Render cart list
       function renderCart() {
         console.log('renderCart')
-        let addedProducts = JSON.parse(localStorage.getItem('cart'))
+        let addedProducts = JSON.parse(sessionStorage.getItem('cart'))
         if(addedProducts && addedProducts !== null) {
             addedProducts.forEach(product=> {
                 const li = document.createElement("li");
@@ -38,7 +38,7 @@
       function addToCart(id) {
         let product = products.find((item)=> item.id === id)
         addedProduct.push(product)
-        localStorage.setItem('cart', JSON.stringify(addedProduct))
+        sessionStorage.setItem('cart', JSON.stringify(addedProduct))
         const li = document.createElement("li");
         li.innerHTML = `${product.name} - $${product.price}`;
         cartList.appendChild(li);
@@ -49,7 +49,7 @@
 
       // Clear cart
       function clearCart() {
-        localStorage.setItem('cart', null)
+        sessionStorage.setItem('cart', null)
         addedProduct = []
         while (cartList.firstChild) {
             cartList.removeChild(cartList.firstChild);
